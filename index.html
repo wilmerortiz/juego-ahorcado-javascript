@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap"
+      rel="stylesheet"
+    />
+    <title>Juego del Ahorcado con Javascript</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <div class="window-notice" id="window-notice" style="display: none">
+      <div class="content">
+        <div class="content-text" id="message"></div>
+        <div class="content-buttons">
+          <button type="button" id="close-button">Aceptar</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- particles.js container -->
+    <div id="particles-jss"></div>
+    <header class="d-flex">
+      <img src="/img/logo.png" alt="logo" />
+    </header>
+
+    <section>
+      <article id="home" class="d-flex flex-column">
+        <h1 class="titulo">Juego del Ahorcado con Javascript</h1>
+        <button class="btn btn-primary" id="btnInitGame">INICIAR JUEGO</button>
+        <button class="btn btn-primary-outlined" id="btnNewPalabra">
+          AGREGAR PALABRA
+        </button>
+      </article>
+
+      <article id="initGame" class="d-flex flex-column" style="display: none">
+        <div
+          class="section d-flex flex-column"
+          id="munieco"
+          style="height: 500px"
+        >
+          <canvas id="canva-munieco"></canvas>
+          <div id="message" style="display: none">Fin del juego</div>
+        </div>
+        <div class="section d-flex justify-center" id="letrasAcertadas"></div>
+        <div class="section d-flex justify-center" id="letrasFallidas"></div>
+        <div id="letrasTeclado"></div>
+        <div class="section d-flex space-between buttons separador">
+          <button class="btn btn-primary" id="btnNewGame">Nuevo Juego</button>
+          <button class="btn btn-primary-outlined" id="btnDesistir">
+            Desistir
+          </button>
+        </div>
+      </article>
+
+      <article
+        id="addNewPalabra"
+        class="d-flex flex-column"
+        style="display: none"
+      >
+        <div class="section d-flex flex-column">
+          <label for="palabra" class="separador">Ingrese una palabra</label>
+          <textarea
+            name="palabra"
+            id="palabra"
+            cols="30"
+            rows="10"
+            class="form"
+            autofocus
+          ></textarea>
+        </div>
+        <div class="section d-flex alert separador">
+          <span class="icono d-flex justify-center">!</span> Max de 8 letras
+        </div>
+        <div class="section d-flex space-between buttons separador">
+          <button class="btn btn-primary" id="btnSavePalabra">
+            GUARDAR Y EMPEZAR
+          </button>
+          <button class="btn btn-primary-outlined" id="btnCancelar">
+            CANCELAR
+          </button>
+        </div>
+      </article>
+    </section>
+
+    <!--<a href="#miModal">Abrir Modal</a>-->
+    <div id="miModal" class="modal">
+      <div class="modal-contenido">
+        <a href="#">X</a>
+        <h2>Mi primer Modal</h2>
+        <p>Este es mi primera ventana modal sin utilizar JavaScript.</p>
+      </div>
+    </div>
+
+    <footer class="d-flex">
+      <img src="/img/logo_oracleAlura-es_branca.1647533644.svg" alt="" />
+      <h3>Wilmer Ortiz Castillo</h3>
+    </footer>
+
+    <script src="/js/app.js"></script>
+  </body>
+</html>
