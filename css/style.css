@@ -56,11 +56,10 @@ section article#addNewPalabra{
 
 label{
   width: 100%;
-  color: #FFF;
+  color: #081d37;
   font-size: 20px;
   left: 0;
   font-weight: bold;
-  text-shadow: -4px 3px 0 #081d37;
 }
 
 .section{
@@ -79,8 +78,8 @@ textarea{
   resize: none;
   height: calc(100vh - 400px);
   background-color: transparent;
-  
-  color: #FFF;
+  color: #081d37;
+  font-size: 30px;
 }
 
 /* ---- particles.js container ---- */
@@ -369,6 +368,9 @@ MENSAJES
 }
 
 @media screen and (min-width:100px) and (max-width:1000px) {
+  section{
+    margin-bottom: 58px;
+  }
   #letrasTeclado{
     opacity: 1;
     width: 90%;
@@ -376,6 +378,14 @@ MENSAJES
   .section{
     width: 95%;
   }
+  .buttons {
+    flex-direction: column;
+  }
+  .buttons button{
+    width: 100%;
+    padding: 10px 10px;
+  }
+
 }
 
 @media only screen and (max-width: 768px) {

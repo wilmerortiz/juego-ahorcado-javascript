@@ -55,29 +55,32 @@ function obtenerPalabra(){
 }
 
 function savePalabra(){
-  var palabra = document.getElementById('palabra').value;
-  dibujarMunieco(0, finalGame);
+  let palabra = document.getElementById("palabra").value;
+  // Eliminamos los espacions en blanco
+  palabra = palabra.replace(/\s+/g, '');
 
   if(!palabra){
     alert('Ingrese una palabra y tiene que ser máximo de 8 caracteres');
     clearTextarea();
+    document.getElementById("palabra").focus();
     return;
   }
 
   if(palabra.length > 8){
     alert('Ingrese una palabra máximo de 8 caracteres');
     clearTextarea();
+    document.getElementById("palabra").focus();
     return;
   }
 
   var newPalabra = palabra.toUpperCase();
 
   if(arrayPalabras.indexOf(newPalabra) === -1){
-    arrayPalabras.push(newPalabra.toUpperCase());
+    arrayPalabras.push(newPalabra);
+    document.getElementById("palabra").focus();
   }
 
   clearTextarea();
-  oculatrContent('initGame');
   
 }
 
@@ -271,17 +274,34 @@ var btnNewPalabra = document.getElementById('btnNewPalabra');
 var btnSavePalabra = document.getElementById('btnSavePalabra');
 var btnCancelar = document.getElementById('btnCancelar');
 var btnInitGame = document.getElementById('btnInitGame');
+var btnIniciarJuego = document.getElementById('btnIniciarJuego');
 var btnNewGame = document.getElementById('btnNewGame');
 var btnDesistir = document.getElementById('btnDesistir');
 
 btnSavePalabra.onclick = savePalabra;
 btnNewPalabra.onclick = () => oculatrContent('addNewPalabra');
 btnCancelar.onclick = () => oculatrContent('home');
-btnInitGame.onclick = () => oculatrContent('initGame');
+//btnInitGame.onclick = () => oculatrContent('initGame');
+//btnIniciarJuego.onclick = () => oculatrContent('initGame');
 btnNewGame.onclick = obtenerPalabra;
 btnDesistir.onclick = () => oculatrContent('home');
 
+
+
+btnInitGame.addEventListener("click", function(e) {
+  e.preventDefault();
+  document.onkeyup = mostrarInformacionCaracter;
+  oculatrContent('initGame');
+});
+
+btnIniciarJuego.addEventListener("click", function(e) {
+  e.preventDefault();
+  document.onkeyup = mostrarInformacionCaracter;
+  oculatrContent('initGame');
+});
+
+/*
 window.onload = function() { 
   document.onkeyup = mostrarInformacionCaracter;
-  
 }
+*/
